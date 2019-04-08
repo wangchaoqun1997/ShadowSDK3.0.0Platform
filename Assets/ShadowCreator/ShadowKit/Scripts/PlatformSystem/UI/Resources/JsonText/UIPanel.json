@@ -1,0 +1,44 @@
+{
+
+  "UIPanelCanvas": 
+  {
+    "UIPanelName": "UIPanelCanvas",
+    "UIPanelPath": "Prefabs/Panels/UIPanelsCanvas"
+  },
+
+
+  "UIPanelList": [
+
+    {
+      "UIPanelName": "LoginAccountAndPasswordPanel",
+      "UIPanelPath": "Prefabs/Panels/Login/LoginAcountAndPasswordPanel"
+    },
+
+    {
+      "UIPanelName": "RegisterPhoneAndVerificationCodePanel",
+      "UIPanelPath": "Prefabs/Panels/Register/RegisterPhoneAndVerificationPanel"
+    },
+
+    {
+      "UIPanelName": "InfoType1Panel",
+      "UIPanelPath": "Prefabs/Panels/Info/InfoType1Panel"
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  ]
+}

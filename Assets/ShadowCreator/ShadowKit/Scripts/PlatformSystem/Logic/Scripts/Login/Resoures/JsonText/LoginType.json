@@ -1,0 +1,14 @@
+{
+	"LoginTypeList": 
+	[
+		{
+			"LoginType": "LoginAcountAndPasswordPanel",
+			"IsUse": true
+		},
+		{
+			"LoginType": "LoginPhoneAndVerificationCode",
+			"IsUse": true
+		}
+	]
+
+}

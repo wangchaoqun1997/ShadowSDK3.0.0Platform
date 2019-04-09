@@ -28,7 +28,6 @@ GameObject:
   - component: {fileID: 22322334}
   - component: {fileID: 11402270}
   - component: {fileID: 11402460}
-  - component: {fileID: 114966577010682102}
   m_Layer: 5
   m_Name: SvrDebugHud
   m_TagString: Untagged
@@ -80,7 +79,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 124748}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8bba50b4ddf2bf40a8987c59da2ad84, type: 3}
   m_Name: 
@@ -461,24 +460,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Eyes
---- !u!114 &114966577010682102
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 124748}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1703106849, guid: d03272e85cd161842b909a08947b67c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  svrManager: {fileID: 0}
-  EventDisplay: {fileID: 1000013872351582}
-  PositionWarning: {fileID: 1000011785870958}
-  FramesPerSecond: {fileID: 124142}
-  Orientation: {fileID: 138280}
-  Position: {fileID: 1000012020567664}
-  Eyes: {fileID: 1000010335227858}
 --- !u!222 &222000012160154226
 CanvasRenderer:
   m_ObjectHideFlags: 1

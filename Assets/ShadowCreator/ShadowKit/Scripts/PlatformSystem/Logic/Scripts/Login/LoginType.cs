@@ -5,6 +5,7 @@ using System.Text;
 
 namespace Assets.ShadowCreator.ShadowKit.Scripts.PlatformSystem.Login {
     public enum LoginType {
+        Default,
         AccountAndPassword,
         PhoneAndVerificationCode,
         Other,

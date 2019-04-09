@@ -4,4 +4,7 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 0
+    path: Assets/ShadowCreator/shadowAction/Examples/LoginAndRegister/LoginAndRegister.unity
+    guid: 12380480d397f1840876c6d6139d0ed8

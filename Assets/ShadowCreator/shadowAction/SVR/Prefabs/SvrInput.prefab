@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4000012147308598}
-  - component: {fileID: 114080886090447942}
+  - component: {fileID: 114000011727690520}
   m_Layer: 0
   m_Name: Controller0
   m_TagString: Untagged
@@ -36,7 +36,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4000010307805804}
   - component: {fileID: 114000011586390726}
-  - component: {fileID: 114475440791650732}
   m_Layer: 0
   m_Name: SvrInput
   m_TagString: Untagged
@@ -82,12 +81,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6de14e0f1fd41e444aa878da95f7afe5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PrimaryController: {fileID: 0}
+  PrimaryController: {fileID: 114000011727690520}
   SecondaryController: {fileID: 0}
   backInputType: 1
   recenterInputType: 2
   ButtonHoldDuration: 0.5
---- !u!114 &114080886090447942
+--- !u!114 &114000011727690520
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -95,22 +94,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000010476219978}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 445575166, guid: d03272e85cd161842b909a08947b67c8, type: 3}
+  m_Script: {fileID: 11500000, guid: ac59704b88d926545accb051b58f7048, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114475440791650732
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013250145816}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 475660416, guid: d03272e85cd161842b909a08947b67c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PrimaryController: {fileID: 0}
-  SecondaryController: {fileID: 0}
-  backInputType: 0
-  recenterInputType: 2
-  ButtonHoldDuration: 1

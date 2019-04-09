@@ -61,7 +61,6 @@ namespace ShadowKit
 				SCInput.Instance.Distance = 2;
 				SCInput.Instance.Normal = gazeDirection;
 			}
-
 		}
 	}
 }

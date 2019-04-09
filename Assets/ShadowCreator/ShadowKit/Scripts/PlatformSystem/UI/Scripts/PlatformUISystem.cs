@@ -29,6 +29,6 @@ public class PlatformUISystem: MonoBehaviour {
     }
 
     void Start() {
-        uiPanelsManager.PushUIPanel(UIPanelsType.LoginAccountAndPasswordPanel);
+        //uiPanelsManager.PushUIPanel(UIPanelsType.LoginAccountAndPasswordPanel);
     }
 }

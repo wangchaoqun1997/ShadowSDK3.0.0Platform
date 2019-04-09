@@ -10,6 +10,11 @@ public class InfoBaseUI : BaseUIPanel {
     public SCButton enterButton;
     public SCButton closeButton;
     public Text mainInfo;
+    private Stack<string> mainInfoStack;
+
+    public InfoBaseUI() {
+        mainInfoStack = new Stack<string>();
+    }
 
     // Use this for initialization
     void Start () {
@@ -25,11 +30,19 @@ public class InfoBaseUI : BaseUIPanel {
         
         base.OnEnter(parameter);
         mainInfo.text = parameter as string;
+        mainInfoStack.Push(mainInfo.text);
     }
 
     public override void OnExit(object parameter = null) {
         base.OnExit(parameter);
         mainInfo.text = "";
+        mainInfoStack.Pop();
+    }
+
+    public override void OnResume(object parameter = null) {
+        base.OnResume(parameter);
+        mainInfo.text = mainInfoStack.Peek();
+
     }
 
     public void CloseButtonFuntion() {

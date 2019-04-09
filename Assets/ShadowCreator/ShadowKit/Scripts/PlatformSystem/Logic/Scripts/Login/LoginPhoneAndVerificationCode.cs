@@ -9,6 +9,7 @@ namespace Assets.ShadowCreator.ShadowKit.Scripts.PlatformSystem.Login {
 
         public LoginPhoneAndVerificationCode() {
             loginType = LoginType.PhoneAndVerificationCode;
+            LOGTAG = "[LoginPhoneAndVerificationCode]:";
         }
 
         public override void Login(string phone, string verificationCode) {

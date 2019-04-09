@@ -10,18 +10,19 @@ public class UserInfo {
     public static string email;
     public static int emailCheck;
     public static string phone;
-
-    public static string Serialno =  string.Empty;
-	public static string Account = string.Empty;
-	public static string AppID = string.Empty;
-   
+    
+	public static string Account;
+	public static string AppID="Platform";
+    
+    public static string Uid;
 	/// <summary>
 	/// 判断是否为游客账号
 	/// </summary>
 	/// <returns><c>true</c>, if vistor account was ised, <c>false</c> otherwise.</returns>
 	public static bool isVistorAccount()
 	{
-		return Serialno == Account;
+        return true;
+		//return Serialno == Account;
 	}
 	/// <summary>
 	/// 判断用户是否登陆

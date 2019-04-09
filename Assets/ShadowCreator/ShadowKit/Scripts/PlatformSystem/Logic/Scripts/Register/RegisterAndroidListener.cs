@@ -14,7 +14,7 @@ namespace ShadowKit
 		public void onInitSerialno(string serialno)
 		{
 			Debug.Log ("LoginListener.onInitSerialno=====>" + serialno);
-			UserInfo.Serialno = serialno;
+			//UserInfo.Serialno = serialno;
 		}
 
 		public void onInitAccountName(string serialno)
@@ -38,13 +38,13 @@ namespace ShadowKit
 		public void onLoginSuccess(string accountName)
 		{
 			Debug.Log ("RegisterAndroidListener.onLoginSuccess=====>" + accountName);
-			UserInfo.Account = accountName;
+			//UserInfo.Account = accountName;
 		}
 
 		public void onLoginFailed(string msg)
 		{
 			Debug.Log ("RegisterAndroidListener.onLoginFailed=====>" + msg);
-			UserInfo.Account = UserInfo.Serialno;
+			//UserInfo.Account = UserInfo.Serialno;
 		}
 
 

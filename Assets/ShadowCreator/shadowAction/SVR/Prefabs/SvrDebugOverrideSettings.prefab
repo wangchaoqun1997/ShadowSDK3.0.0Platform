@@ -19,8 +19,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4000013301871076}
-  - component: {fileID: 114572200706834876}
-  - component: {fileID: 114566429255011382}
+  - component: {fileID: 114000013078486776}
+  - component: {fileID: 114000013277051540}
   m_Layer: 0
   m_Name: SvrDebugOverrideSettings
   m_TagString: Untagged
@@ -41,7 +41,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114566429255011382
+--- !u!114 &114000013078486776
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -49,10 +49,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000011500830378}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1706039111, guid: d03272e85cd161842b909a08947b67c8, type: 3}
+  m_Script: {fileID: 11500000, guid: d3afeb8c628f09d4fa33d2c4b9d4cbc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114572200706834876
+--- !u!114 &114000013277051540
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -60,6 +60,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000011500830378}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1174510534, guid: d03272e85cd161842b909a08947b67c8, type: 3}
+  m_Script: {fileID: 11500000, guid: 00017ea1f7614c94c9771f09c555aeaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

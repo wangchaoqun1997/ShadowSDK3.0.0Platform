@@ -74,4 +74,17 @@ public class WebRequestSystem : MonoBehaviour {
         WebRequestSystem.Instant.AddWebRequest(wq);
     }
 
+
+    public void GetRegisterPhoneVerificationcode(Action<JsonData> GetSystemTokenSuccess, Action<JsonData> GetSystemTokenFailed, WWWForm form) {
+        WebRequestBase wq = new WebRequestGetRegisterPhoneVerificationcode(form, GetSystemTokenSuccess, GetSystemTokenFailed);
+        WebRequestSystem.Instant.AddWebRequest(wq);
+    }
+
+
+    public void Register(Action<JsonData> GetSystemTokenSuccess, Action<JsonData> GetSystemTokenFailed) {
+        WebRequestBase wq = new WebRequestRegister(new WWWForm(), GetSystemTokenSuccess, GetSystemTokenFailed);
+        WebRequestSystem.Instant.AddWebRequest(wq);
+    }
+
+
 }

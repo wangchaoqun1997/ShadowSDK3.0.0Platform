@@ -51,6 +51,6 @@ public abstract class RegisterBaseUI : BaseUIPanel {
     public abstract void Register();
     public virtual void GoToLogin() {
         PlatformUISystem.Instant.uiPanelsManager.PopUIPanel();
-        PlatformUISystem.Instant.uiPanelsManager.PushUIPanel(UIPanelsType.LoginAccountAndPasswordPanel);
+        PlatformUISystem.Instant.uiPanelsManager.PushUIPanel(UIPanelsType.LoginAcountAndPasswordPanelWithVerificationcode);
     }
 }

@@ -22,6 +22,9 @@ public class PlatformLogicSystem : MonoBehaviour {
     void Start() {
         DebugMy.Log("Start",this);
         VerifyStatusSystem.Instant.SetVerifyStrategy(new VerifyStrategy1());
+
+        //RegisterSystem.SetStrategy(new RegisterStrategyPhoneFromWebRequest());
+        //RegisterSystem.Register();
     }
 
     void Update() {

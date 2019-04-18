@@ -10,4 +10,9 @@ public class WebRequestURL {
     public const string GetVerificationCode = "http://apitest.shadowcreator.com/auth/get_code_png/";
     public const string VerifyAPPID = "http://apitest.shadowcreator.com/auth/get_code_png/";
     public const string GetSystemToken = "http://apitest.shadowcreator.com/auth/get_code_png/";
+
+
+
+    public const string GetRegisterPhoneVerificationCode = "http://api.shadowcreator.com/auth/get_sms_code";
+    public const string Register = "http://api.shadowcreator.com/auth/register";
 }

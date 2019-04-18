@@ -13,7 +13,10 @@
       "UIPanelName": "LoginAccountAndPasswordPanel",
       "UIPanelPath": "Prefabs/Panels/Login/LoginAcountAndPasswordPanel"
     },
-
+	{
+      "UIPanelName": "LoginAcountAndPasswordPanelWithVerificationcode",
+      "UIPanelPath": "Prefabs/Panels/Login/LoginAcountAndPasswordPanelWithVerificationcode"
+    },
     {
       "UIPanelName": "RegisterPhoneAndVerificationCodePanel",
       "UIPanelPath": "Prefabs/Panels/Register/RegisterPhoneAndVerificationPanel"
@@ -23,6 +26,8 @@
       "UIPanelName": "InfoType1Panel",
       "UIPanelPath": "Prefabs/Panels/Info/InfoType1Panel"
     }
+
+
 
 
 

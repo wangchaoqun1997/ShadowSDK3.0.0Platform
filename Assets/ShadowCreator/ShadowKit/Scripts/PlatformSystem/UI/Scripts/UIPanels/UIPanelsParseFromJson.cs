@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using LitJson;
-using Assets.ShadowCreator.ShadowKit.Scripts.PlatformSystem.UI.Scripts;
-using Assets.ShadowCreator.ShadowKit.Scripts.PlatformSystem.UI;
+
 using System;
 
 public class UIPanelsParseFromJson {

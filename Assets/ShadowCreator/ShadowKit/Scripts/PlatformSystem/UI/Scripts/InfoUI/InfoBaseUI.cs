@@ -1,5 +1,4 @@
-﻿using Assets.ShadowCreator.ShadowKit.Scripts.PlatformSystem.UI;
-using ShadowKit.UI;
+﻿using ShadowKit.UI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

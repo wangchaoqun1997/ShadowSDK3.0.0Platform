@@ -25,16 +25,22 @@ public class LoginAccountAndPasswordWithVerificationcodeUI : LoginBaseUI {
     /// <param name="s"></param>
     public override void Login() {
         ///输入参数检查
-        if (loginNameInputField.textCompontent.text == String.Empty || loginPasswordInputField.textCompontent.text == String.Empty) {
-            //TODO  PopupUIManager.popupUI.SetInfo("用户名或密码不能为空");
-
-            PlatformUISystem.Instant.uiPanelsManager.PushUIPanel(UIPanelsType.InfoType1Panel, "用户名或密码不能为空");
-
+        if (loginNameInputField.textCompontent.text == string.Empty) {
+            PlatformUISystem.Instant.uiPanelsManager.PushUIPanel(UIPanelsType.InfoType1Panel, "用户名不能为空");
+            //return;
+        }
+        if (loginPasswordInputField.textCompontent.text == string.Empty) {
+            PlatformUISystem.Instant.uiPanelsManager.PushUIPanel(UIPanelsType.InfoType1Panel, "密码不能为空");
+            //return;
+        }
+        if (Verificationcode.textCompontent.text == string.Empty) {
+            PlatformUISystem.Instant.uiPanelsManager.PushUIPanel(UIPanelsType.InfoType1Panel, "验证码不能为空");
             //return;
         }
 
+
         WWWForm form = new WWWForm();
-        form.AddField("session_id", SysInfo.sessionId);
+        form.AddField("session_id", UserSystem.Instant.SysInfo.SessionId);
         form.AddField("code", Verificationcode.textCompontent.text);
         form.AddField("loginstr", loginNameInputField.textCompontent.text);
         form.AddField("password", loginPasswordInputField.textCompontent.text);
@@ -46,7 +52,9 @@ public class LoginAccountAndPasswordWithVerificationcodeUI : LoginBaseUI {
     
 
     public void LoginSuccess(JsonData responseJsonData) {
-        SysInfo.SetSysInfo(responseJsonData);
+
+        UserSystem.Instant.SysInfo.SetUserInfo(responseJsonData,loginNameInputField.textCompontent.text, loginPasswordInputField.textCompontent.text);
+
         PlatformUISystem.Instant.uiPanelsManager.PopAllUIPanel();
         PlatformUISystem.Instant.uiPanelsManager.PushUIPanel(UIPanelsType.InfoType1Panel, "LoginSuccess");
     }
@@ -58,7 +66,7 @@ public class LoginAccountAndPasswordWithVerificationcodeUI : LoginBaseUI {
 
 
     public void GetSessionIDSuccess(JsonData responseJsonData) {
-        SysInfo.sessionId = responseJsonData["session_id"].ToString();
+        UserSystem.Instant.SysInfo.SessionId = responseJsonData["session_id"].ToString();
         RefreshVerificationCode();
     }
 

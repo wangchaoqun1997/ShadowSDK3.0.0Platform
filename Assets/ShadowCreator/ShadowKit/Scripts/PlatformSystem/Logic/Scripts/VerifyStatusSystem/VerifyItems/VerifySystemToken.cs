@@ -13,7 +13,7 @@ public class VerifySystemToken:VerifyItemBase {
     /// 刷新SystemToken状态
     /// </summary>
     public override void OnUpdate() {
-        if (SysInfo.IsTokenValid() == true) {
+        if (UserSystem.Instant.SysInfo.IsUserTokenValid == true) {
             verifyState = VerifyState.Success;
         } else{
             if (verifyState == VerifyState.Doning) {
@@ -28,18 +28,17 @@ public class VerifySystemToken:VerifyItemBase {
     /// <summary>
     /// 执行获取SystemToken过程
     /// </summary>
-    public override void Start() {
-        //WebRequestSystem.Instant.GetSystemToken(GetSystemTokenSuccess, GetSystemTokenFailed);
-        GetSystemTokenFailed(null);
-    }
-    private void GetSystemTokenSuccess(JsonData jsonData) {
-        SysInfo.SetSysInfo(jsonData);
-    }
-    private void GetSystemTokenFailed(JsonData jsonData) {
-        DebugMy.Log("GetSystemTokenFailed",this);
-        SysInfo.ResetSysInfo();
+    public override void DoVerifyStart() {
         LoginSystem.SetStrategy(new LoginStrategyAccountAndPasswordFrowWebRequest());
         LoginSystem.Login();
     }
+    //private void GetSystemTokenSuccess(JsonData jsonData) {
+    //    //UserSystem.Instant.SysInfo.SetUserInfo(jsonData);
+    //}
+    //private void GetSystemTokenFailed(JsonData jsonData) {
+    //    DebugMy.Log("GetSystemTokenFailed",this);
+    //    //UserSystem.Instant.SysInfo.ResetUserInfo();
+
+    //}
 
 }

@@ -17,7 +17,7 @@ namespace ShadowKit{
 		//获取微信支付订单
 		private void getWxmicropay()
 		{
-			createWxmicropay (goodsID, count, createWxmicropaySuccessFun, createWxmicropayFaildFun);
+			//createWxmicropay (goodsID, count, createWxmicropaySuccessFun, createWxmicropayFaildFun);
 		}
 
 		//获取订单成功。。
@@ -37,11 +37,11 @@ namespace ShadowKit{
 		//与sdk交互唤起微信支付
 		public void callSdkWxmicropay()
 		{
-			#if UNITY_ANDROID && !UNITY_EDITOR
-			string payInfo = UserInfo.Account + ";" + UserInfo.AppID + ";" + goodsID + ";" + goodsDescribe + ";" + outTradeNo + ";" + totalFee;
-			AndroidConnection.Instance.addListener<PayAndroidListener> ("setPaySystemCallback",new PayAndroidListener(){onSuccess = onSdkWxmicropaySuccess, onFailed =onSdkWxmicropayFailded });
-			AndroidConnection.Instance.Call("unityPay",payInfo);
-			#endif
+			//#if UNITY_ANDROID && !UNITY_EDITOR
+			//string payInfo = UserInfo.Account + ";" + UserInfo.AppID + ";" + goodsID + ";" + goodsDescribe + ";" + outTradeNo + ";" + totalFee;
+			//AndroidConnection.Instance.addListener<PayAndroidListener> ("setPaySystemCallback",new PayAndroidListener(){onSuccess = onSdkWxmicropaySuccess, onFailed =onSdkWxmicropayFailded });
+			//AndroidConnection.Instance.Call("unityPay",payInfo);
+			//#endif
 			//需要加一个遮罩 玩家支付等待中～～～～
 		}
 
@@ -64,7 +64,7 @@ namespace ShadowKit{
 		{
 			Debug.Log ("paySystem.quertWxmicropay");
 
-			quertWxmicropay (outTradeNo,paySuccessFun,payFaildFun);
+			//quertWxmicropay (outTradeNo,paySuccessFun,payFaildFun);
 		}
 
 
@@ -125,26 +125,26 @@ namespace ShadowKit{
 		/// <param name="pas">Pas.</param>
 		/// <param name="success">Success.</param>
 		/// <param name="failed">Failed.</param>
-		private void createWxmicropay(string goodsId,int goodsCount,Action<JsonData> success = null,Action<string> failed = null)
-		{
-			JsonData data = new JsonData ();
-			data ["AppId"] = UserInfo.AppID;
-			data ["Account"] = UserInfo.Account;
-			data ["GoodsId"] = goodsId;
-			data ["GoodsCount"] = goodsCount;
-			string action = "pay/create/wxmicropay";
-			string url = "http://chengyxtest.chinacloudapp.cn/sdk_app_pay/";
-			GetComponent<NetWorkManager>().addNetwork (url, action, data.ToJson (), success, failed);
-		}
+		//private void createWxmicropay(string goodsId,int goodsCount,Action<JsonData> success = null,Action<string> failed = null)
+		//{
+		//	JsonData data = new JsonData ();
+		//	data ["AppId"] = UserInfo.AppID;
+		//	data ["Account"] = UserInfo.Account;
+		//	data ["GoodsId"] = goodsId;
+		//	data ["GoodsCount"] = goodsCount;
+		//	string action = "pay/create/wxmicropay";
+		//	string url = "http://chengyxtest.chinacloudapp.cn/sdk_app_pay/";
+		//	GetComponent<NetWorkManager>().addNetwork (url, action, data.ToJson (), success, failed);
+		//}
 
-		private void quertWxmicropay(string OutTradeNo,Action<JsonData> success = null,Action<string> failed = null)
-		{
-			JsonData data = new JsonData ();
-			data ["AppId"] = UserInfo.AppID;
-			data ["OutTradeNo"] = OutTradeNo;
-			string action = "pay/query/wxmicropay";
-			string url = "http://chengyxtest.chinacloudapp.cn/sdk_app_pay/";
-			GetComponent<NetWorkManager>().addNetwork (url, action, data.ToJson (), success, failed);
-		}
+		//private void quertWxmicropay(string OutTradeNo,Action<JsonData> success = null,Action<string> failed = null)
+		//{
+		//	JsonData data = new JsonData ();
+		//	data ["AppId"] = UserInfo.AppID;
+		//	data ["OutTradeNo"] = OutTradeNo;
+		//	string action = "pay/query/wxmicropay";
+		//	string url = "http://chengyxtest.chinacloudapp.cn/sdk_app_pay/";
+		//	GetComponent<NetWorkManager>().addNetwork (url, action, data.ToJson (), success, failed);
+		//}
 	}
 }

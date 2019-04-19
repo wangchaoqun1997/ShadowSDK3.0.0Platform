@@ -11,7 +11,7 @@ public class VerifyAPPToken:VerifyItemBase {
     /// 刷新SystemToken状态
     /// </summary>
     public override void OnUpdate() {
-        if (AppInfo.IsTokenValid() == true) {
+        if (UserSystem.Instant.AppInfo.IsTokenValid() == true) {
             verifyState = VerifyState.Success;
         } else {
             if (verifyState == VerifyState.Doning) {
@@ -26,14 +26,14 @@ public class VerifyAPPToken:VerifyItemBase {
     /// <summary>
     /// 执行获取SystemToken过程
     /// </summary>
-    public override void Start() {
+    public override void DoVerifyStart() {
 
         WebRequestSystem.Instant.GetAppToken(GetAppTokenSuccess, GetAppTokenFailed);
     }
     public static void GetAppTokenSuccess(JsonData responseJsonData) {
-        AppInfo.SetAppInfo(responseJsonData);
-        
-        UserInfo.Uid = responseJsonData["data"]["uid"].ToString();
+        UserSystem.Instant.AppInfo.SetAppInfo(responseJsonData);
+
+        UserSystem.Instant.SysInfo.mUser.Uid = responseJsonData["data"]["uid"].ToString();
 
     }
     public static void GetAppTokenFailed(JsonData responseJsonData) {

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class VerifyStatusSystem {
 
-    public VerifyItemBase[] VerifyItems = new VerifyItemBase[3] { new VerifyAPP(), new VerifySystemToken() , new VerifyAPPToken() };
+    public VerifyItemBase[] VerifyItems = new VerifyItemBase[3] { new VerifyAPP() , new VerifySystemToken(), new VerifyAPPToken() };
 
     private static VerifyStatusSystem instant;
     private VerifyStatusSystem() { }

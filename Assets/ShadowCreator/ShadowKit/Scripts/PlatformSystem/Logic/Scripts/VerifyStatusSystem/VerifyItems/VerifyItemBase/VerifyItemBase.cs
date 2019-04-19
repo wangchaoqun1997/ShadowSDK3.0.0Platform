@@ -13,15 +13,15 @@ public abstract class VerifyItemBase {
     /// </summary>
     public void DoVerify() {
         DebugMy.Log("DoVerify", this);
-        PreEnter();
-        Start();
+        PreDoVerify();
+        DoVerifyStart();
     }
 
-    public virtual void PreEnter() {
+    public virtual void PreDoVerify() {
         verifyState = VerifyState.Doning;
     }
-    public abstract void Start();
-    public virtual void Exit() { }
+    public abstract void DoVerifyStart();
+
 
     /// <summary>
     /// 更新VerifyState的状态

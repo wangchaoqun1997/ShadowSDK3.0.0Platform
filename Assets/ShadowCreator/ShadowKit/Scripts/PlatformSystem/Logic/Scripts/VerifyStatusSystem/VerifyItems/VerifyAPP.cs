@@ -14,20 +14,17 @@ public class VerifyAPP:VerifyItemBase {
         
     }
 
-    public override void PreEnter() {
-        base.PreEnter();
-        AppInfo.APPID = "100001";
-        AppInfo.APPKEY = "123456";
+    public override void PreDoVerify() {
+        base.PreDoVerify();
+        UserSystem.Instant.AppInfo.APPID = "100001";
+        UserSystem.Instant.AppInfo.APPKEY = "123456";
     }
 
-    public override void Start() {
+    public override void DoVerifyStart() {
         //WebRequestSystem.Instant.VerifyAPPID(VerifyAPPIDSuccess, VerifyAPPIDFailed);
         VerifyAPPIDSuccess(null);
     }
-
-    public override void Exit() {
-        
-    }
+    
 
 
 
@@ -45,7 +42,7 @@ public class VerifyAPP:VerifyItemBase {
         Debug.Log("VerifyAPPIDFailed");
         verifyState = VerifyState.Failed;
         //App非法
-        AppInfo.ResetAppInfo();
+        UserSystem.Instant.AppInfo.ResetAppInfo();
 
         PlatformUISystem.Instant.uiPanelsManager.PushUIPanel(UIPanelsType.InfoType1Panel, "ERROR:APPID and APPKey Illegal");
         // Application.Quit();

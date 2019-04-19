@@ -37,5 +37,9 @@ public class LoginSystem {
     public static void Failed(object parm) {
 
     }
+
+    public static void Logout() {
+        UserSystem.Instant.SysInfo.ResetUserInfo();
+    }
     
 }

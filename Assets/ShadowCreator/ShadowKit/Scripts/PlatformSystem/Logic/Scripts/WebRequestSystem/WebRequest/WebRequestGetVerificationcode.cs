@@ -18,12 +18,12 @@ public class WebRequestGetVerificationCode : WebRequestBase {
 
 
     public override IEnumerator SendRequest() {
-        if (SysInfo.SystemToken != null) {
-            wwwForm.AddField("token", SysInfo.SystemToken);
+        if (UserSystem.Instant.SysInfo.UserToken != null) {
+            wwwForm.AddField("token", UserSystem.Instant.SysInfo.UserToken);
         }
-        if (AppInfo.APPID != null) {
-            wwwForm.AddField("app_id", AppInfo.APPID);
-        }
+        //if (UserSystem.Instant.app != null) {
+        //    wwwForm.AddField("app_id", AppInfo.APPID);
+        //}
 
         UnityWebRequest www = UnityWebRequest.Post(url, wwwForm);
         yield return www.SendWebRequest();

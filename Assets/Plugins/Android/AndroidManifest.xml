@@ -1,6 +1,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.invision.unity">
-
+<uses-permission android:name="android.permission.MANAGE_ACCOUNTS"></uses-permission>
+<!-- <uses-permission android:name="android.permission.ACCOUNT_MANAGER"></uses-permission> -->
+<uses-permission android:name="android.permission.GET_ACCOUNTS"></uses-permission>
+<uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS"></uses-permission>
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+<uses-permission android:name="android.permission.INTERNET"/>
+<uses-permission android:name="android.permission.GET_TASKS"/>
    
     <application
         android:allowBackup="true"
@@ -25,9 +31,23 @@
             <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
             <meta-data android:name="com.osterhoutgroup.display_mode" android:value="extend"/>
         </activity>
-		
+		<service android:name="com.invision.unity.account.AccountsService"
+    android:process=":core">
+    <intent-filter>
+        <action android:name="android.accounts.AccountAuthenticator" ></action>
+    </intent-filter>
+    <meta-data
+        android:name="android.accounts.AccountAuthenticator"
+        android:value="xx">
+    </meta-data>
+</service>
         <!--<activity android:name="com.invision.unity.scan.CaptureActivity">-->
 
         <!--</activity>-->
     </application>
 </manifest>
+
+
+
+
+

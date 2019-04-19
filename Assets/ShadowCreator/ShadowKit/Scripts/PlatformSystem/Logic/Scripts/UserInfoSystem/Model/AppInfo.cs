@@ -7,37 +7,32 @@ using System.Text;
 public class AppInfo {
     
 
-    public static string APPID;
-    public static string APPKEY;
+    public string APPID;
+    public string APPKEY;
    
 
-    public static void ResetAppInfo() {
+    public void ResetAppInfo() {
         APPToken = null;
         AppTokenExpireTime = 0;
     }
-    public static void SetAppInfo(JsonData responseJsonData) {
+    public void SetAppInfo(JsonData responseJsonData) {
         APPToken = responseJsonData["data"]["app_token"].ToString();
         AppTokenExpireTime = double.Parse(responseJsonData["data"]["token_expire_time"].ToString());
         
     }
 
-
-    public static bool isAPPLegal { get; private set; }
-    private static string mAPPToken;
-    public static string APPToken {
+    
+    private string mAPPToken;
+    public string APPToken {
         get { return mAPPToken; }
         set {
             mAPPToken = value;
-            isAPPLegal = true;
-            if (mAPPToken == null) {
-                isAPPLegal = false;
-            }
         }
     }
 
-    private static DateTime mDateTimeWhenGetToken;
-    private static double mAppTokenExpireTime;
-    public static double AppTokenExpireTime {
+    private DateTime mDateTimeWhenGetToken;
+    private double mAppTokenExpireTime;
+    public double AppTokenExpireTime {
         get { return mAppTokenExpireTime; }
         set {
             mAppTokenExpireTime = value;
@@ -48,7 +43,7 @@ public class AppInfo {
         }
     }
 
-    public static bool IsTokenValid() {
+    public bool IsTokenValid() {
         DebugMy.Log("AppInfo IsTokenValid", null);
         ///APPTokenExpireTime为0时 过期
         if (AppTokenExpireTime == 0)

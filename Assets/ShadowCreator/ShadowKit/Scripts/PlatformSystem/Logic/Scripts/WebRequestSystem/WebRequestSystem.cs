@@ -49,7 +49,7 @@ public class WebRequestSystem : MonoBehaviour {
 
     public void GetVerificationCode(Action<byte[]> GetVerificationCodeSuccess) {
         WWWForm form = new WWWForm();
-        form.AddField("session_id", SysInfo.sessionId);
+        form.AddField("session_id", UserSystem.Instant.SysInfo.SessionId);
         WebRequestBase wq = new WebRequestGetVerificationCode(form, GetVerificationCodeSuccess);
         WebRequestSystem.Instant.AddWebRequest(wq);
     }

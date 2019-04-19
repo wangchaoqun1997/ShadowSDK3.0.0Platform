@@ -60,13 +60,12 @@ public abstract class WebRequestBase {
             }
 
         } else if (webRequestType == WebRequestType.POST) {
-
-            if (SysInfo.SystemToken != null) {
-                wwwForm.AddField("token", SysInfo.SystemToken);
+            if (UserSystem.Instant.SysInfo.UserToken != null) {
+                wwwForm.AddField("token", UserSystem.Instant.SysInfo.UserToken);
             }
-            if (AppInfo.APPID != null) {
-                wwwForm.AddField("app_id", AppInfo.APPID);
-            }
+            //if (AppInfo.APPID != null) {
+            //    wwwForm.AddField("app_id", AppInfo.APPID);
+            //}
 
             UnityWebRequest www = UnityWebRequest.Post(url, wwwForm);
             yield return www.SendWebRequest();
@@ -83,6 +82,17 @@ public abstract class WebRequestBase {
                             mSuccess(responseJsonData);
                         }
                     } else if ("-1" == responseJsonData["code"].ToString()) {
+
+                        try {
+                            if (responseJsonData["msg"].ToString() == "验证失败，请重新获取系统token") {
+                                DebugMy.Log("Delect Account !!!", this);
+                                UserSystem.Instant.SysInfo.ResetUserInfo();
+                            }
+                        } catch (Exception e) {
+                            Debug.Log(e);
+                        }
+                        
+
                         if (mFailed != null) {
                             mFailed(responseJsonData);
                         }

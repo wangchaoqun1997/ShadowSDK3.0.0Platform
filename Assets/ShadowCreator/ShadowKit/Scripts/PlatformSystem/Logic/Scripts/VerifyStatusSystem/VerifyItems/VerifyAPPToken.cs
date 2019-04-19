@@ -10,24 +10,22 @@ public class VerifyAPPToken:VerifyItemBase {
     /// <summary>
     /// 刷新SystemToken状态
     /// </summary>
-    public override void OnUpdate() {
+    public override void OnUpdateVerifyState() {
         if (UserSystem.Instant.AppInfo.IsTokenValid() == true) {
             verifyState = VerifyState.Success;
         } else {
             if (verifyState == VerifyState.Doning) {
-                DebugMy.Log(verifyState.ToString(), this);
                 return;
             }
             verifyState = VerifyState.Failed;
         }
-        DebugMy.Log(verifyState.ToString(), this);
     }
 
     /// <summary>
-    /// 执行获取SystemToken过程
+    /// 执行state是Failed时的动作
     /// </summary>
-    public override void DoVerifyStart() {
-
+    public override void DoSolve() {
+        base.DoSolve();
         WebRequestSystem.Instant.GetAppToken(GetAppTokenSuccess, GetAppTokenFailed);
     }
     public static void GetAppTokenSuccess(JsonData responseJsonData) {
@@ -38,8 +36,6 @@ public class VerifyAPPToken:VerifyItemBase {
     }
     public static void GetAppTokenFailed(JsonData responseJsonData) {
         PlatformUISystem.Instant.uiPanelsManager.PushUIPanel(UIPanelsType.InfoType1Panel, "ERROR: Get APPToken Error");
-
-        Debug.Log("sleep 5 finished");
         //Application.Quit();
     }
 

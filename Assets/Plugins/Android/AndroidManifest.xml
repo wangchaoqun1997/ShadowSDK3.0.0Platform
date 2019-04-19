@@ -31,16 +31,16 @@
             <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
             <meta-data android:name="com.osterhoutgroup.display_mode" android:value="extend"/>
         </activity>
-		<service android:name="com.invision.unity.account.AccountsService"
-    android:process=":core">
-    <intent-filter>
-        <action android:name="android.accounts.AccountAuthenticator" ></action>
-    </intent-filter>
-    <meta-data
-        android:name="android.accounts.AccountAuthenticator"
-        android:value="xx">
-    </meta-data>
-</service>
+      <service android:name="com.invision.unity.account.AccountsService"
+          android:process=":core">
+        <intent-filter>
+          <action android:name="android.accounts.AccountAuthenticator" ></action>
+        </intent-filter>
+        <meta-data
+            android:name="android.accounts.AccountAuthenticator"
+            android:resource="@xml/authenticator">
+        </meta-data>
+      </service>
         <!--<activity android:name="com.invision.unity.scan.CaptureActivity">-->
 
         <!--</activity>-->

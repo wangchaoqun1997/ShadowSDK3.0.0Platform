@@ -4,6 +4,7 @@ using System.Text;
 using UnityEngine;
 
 public enum UserType {
-    Nomal = 0,
-    Vistor = 1,
+    Null=0,
+    Nomal = 1,
+    Vistor = 2,
 }

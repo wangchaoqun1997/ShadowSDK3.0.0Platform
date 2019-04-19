@@ -39,6 +39,12 @@ public class LoginAccountAndPasswordWithVerificationcodeUI : LoginBaseUI {
         }
 
 
+//#if UNITY_ANDROID && !UNITY_EDITOR
+//        DebugMy.Log("start----------------",this);
+//        AndroidConnection.Instance.Call("unityLoginAccount", "18918690343", "wangcq327", "1234141241412412");
+//        DebugMy.Log("end----------------", this);
+//#endif
+//        return;
         WWWForm form = new WWWForm();
         form.AddField("session_id", UserSystem.Instant.SysInfo.SessionId);
         form.AddField("code", Verificationcode.textCompontent.text);
@@ -48,8 +54,9 @@ public class LoginAccountAndPasswordWithVerificationcodeUI : LoginBaseUI {
         //form.AddField("password", "wang89c51");
         WebRequestSystem.Instant.Login(LoginSuccess, LoginFailed,form);
 
+
     }
-    
+
 
     public void LoginSuccess(JsonData responseJsonData) {
 

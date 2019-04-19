@@ -11,9 +11,8 @@ public abstract class UserBase {
     public UserBase(UserType type) {
         userType = type;
     }
-    /// <summary>
-    /// 属性
-    /// </summary>
+
+
     public UserType userType;
 
     protected string account;
@@ -58,6 +57,7 @@ public abstract class UserBase {
     }
 
     public virtual void ResetUserInfo() {
+        DebugMy.Log("Delect Account !!!",this);
         account = null;
         password = null;
         token = null;
@@ -77,6 +77,12 @@ public abstract class UserBase {
     public virtual bool IsTokenVaild() {
         return false;
 
+    }
+
+
+
+    public void PrintInfo() {
+        DebugMy.Log(Account + ":" + Password + ":" + Token + ":" + userType, this);
     }
 
 

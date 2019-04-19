@@ -44,7 +44,6 @@ public class AppInfo {
     }
 
     public bool IsTokenValid() {
-        DebugMy.Log("AppInfo IsTokenValid", null);
         ///APPTokenExpireTime为0时 过期
         if (AppTokenExpireTime == 0)
             return false;

@@ -9,19 +9,16 @@ using System.Text;
 using UnityEngine;
 
 public class VerifyAPP:VerifyItemBase {
+    
 
-    public override void OnUpdate() {
-        
-    }
+    public override void DoSolve() {
+        base.DoSolve();
+        //WebRequestSystem.Instant.VerifyAPPID(VerifyAPPIDSuccess, VerifyAPPIDFailed);
 
-    public override void PreDoVerify() {
-        base.PreDoVerify();
         UserSystem.Instant.AppInfo.APPID = "100001";
         UserSystem.Instant.AppInfo.APPKEY = "123456";
-    }
 
-    public override void DoVerifyStart() {
-        //WebRequestSystem.Instant.VerifyAPPID(VerifyAPPIDSuccess, VerifyAPPIDFailed);
+
         VerifyAPPIDSuccess(null);
     }
     
@@ -34,7 +31,6 @@ public class VerifyAPP:VerifyItemBase {
         //APP合法
         //AppInfo.SetAppInfo(responseJsonData);
         
-
     }
 
 
@@ -48,5 +44,7 @@ public class VerifyAPP:VerifyItemBase {
         // Application.Quit();
     }
 
+    public override void OnUpdateVerifyState() {
 
+    }
 }

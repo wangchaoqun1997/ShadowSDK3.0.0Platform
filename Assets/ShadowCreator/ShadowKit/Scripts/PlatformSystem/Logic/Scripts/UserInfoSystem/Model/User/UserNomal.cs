@@ -45,11 +45,10 @@ public class UserNomal :UserBase{
         }
     }
 
+
+
     public override bool IsTokenVaild() {
-        
         return (Token != null) ? true : false;
-        //TimeSpan span = (TimeSpan)(DateTime.Now - mDateTimeWhenGetTokenExpireTime);
-        //return (span.TotalMilliseconds > TokenExpireTime) ? false : true;
     }
 
     public override void SetUserInfo(object obj, string _account, string _password) {
@@ -61,10 +60,11 @@ public class UserNomal :UserBase{
         Phone = jsonData["phone"].ToString();
         Uid = jsonData["uid"].ToString();
         Nickname = jsonData["nickname"].ToString();
-
-
+        
         ///TODO 存到文件系统
         WriteSysinfoToMemory(_account, _password, jsonData["token"].ToString());
+
+        UserSystem.Instant.SysInfo.mUser.PrintInfo();
     }
 
     void WriteSysinfoToMemory(string Account, string Password, string Token) {
@@ -85,7 +85,7 @@ public class UserNomal :UserBase{
 
     void ErasureSysinfoInMemeory(string Account) {
 #if UNITY_ANDROID && !UNITY_EDITOR
-        AndroidConnection.Instance.Call("unityRemoveAccount");
+        AndroidConnection.Instance.Call("unityRemoveAccount",Account);
 #endif
     }
 

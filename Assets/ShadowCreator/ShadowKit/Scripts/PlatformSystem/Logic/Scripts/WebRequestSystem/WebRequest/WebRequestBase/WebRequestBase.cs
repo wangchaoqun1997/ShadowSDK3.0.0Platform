@@ -85,7 +85,6 @@ public abstract class WebRequestBase {
 
                         try {
                             if (responseJsonData["msg"].ToString() == "验证失败，请重新获取系统token") {
-                                DebugMy.Log("Delect Account !!!", this);
                                 UserSystem.Instant.SysInfo.ResetUserInfo();
                             }
                         } catch (Exception e) {

@@ -17,23 +17,36 @@ public class VerifyStatusSystem {
             return instant;
         }
     }
-
-    
-    /// <summary>
-    /// 系统验证的策略
-    /// </summary>
-    IVerifyStrategy mVerifyStrategy;
-    public void SetVerifyStrategy(IVerifyStrategy verifyStrategy) {
-        mVerifyStrategy = verifyStrategy;
-    }
-
     /// <summary>
     /// per frame invoke
     /// </summary>
+    /// 
+    float timer = 0;
+    float interval = 5;
+
     public void OnUpdate() {
-        if (mVerifyStrategy != null) {
-            mVerifyStrategy.OnUpdate(VerifyItems);
+        timer += Time.deltaTime;
+        if (timer < interval) {
+            return;
         }
+        timer = 0;
+        
+
+        foreach (VerifyItemBase verifyItem in VerifyItems) {
+
+            verifyItem.OnUpdateVerifyState();
+
+            DebugMy.Log(verifyItem.ToString()+": "+verifyItem.verifyState.ToString(), this);
+
+            if (verifyItem.verifyState != VerifyState.Success) {
+                if (verifyItem.verifyState != VerifyState.Doning) {
+                    verifyItem.DoSolve();
+                }
+                break;
+            }
+        }
+        
     }
     
+
 }

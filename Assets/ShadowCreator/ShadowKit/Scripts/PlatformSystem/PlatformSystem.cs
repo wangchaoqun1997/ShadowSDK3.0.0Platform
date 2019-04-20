@@ -6,9 +6,9 @@ using UnityEngine.Networking;
 
 
 
-public class PlatformLogicSystem : MonoBehaviour {
+public class PlatformSystem : MonoBehaviour {
     
-    public static PlatformLogicSystem Instant;
+    public static PlatformSystem Instant;
 
     void Awake() {
         if (Instant != null) {

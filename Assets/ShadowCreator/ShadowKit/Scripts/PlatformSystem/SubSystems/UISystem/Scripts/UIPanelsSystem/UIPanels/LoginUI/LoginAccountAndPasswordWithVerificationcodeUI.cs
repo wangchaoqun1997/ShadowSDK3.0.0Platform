@@ -92,7 +92,8 @@ public class LoginAccountAndPasswordWithVerificationcodeUI : LoginBaseUI {
     }
 
     public void GetVerificationCodeSuccess(byte[] responseStringData) {
-        Texture2D targetTexturePre = new Texture2D(120, 50);
+        ///不能mipmap否则模糊看不清
+        Texture2D targetTexturePre = new Texture2D(120, 50,TextureFormat.RGB24,false);
         targetTexturePre.LoadImage(responseStringData);
         Sprite temp = Sprite.Create(targetTexturePre, new Rect(0, 0, targetTexturePre.width, targetTexturePre.height), new Vector2(0, 0));
         VerificationcodeImage.sprite = temp;

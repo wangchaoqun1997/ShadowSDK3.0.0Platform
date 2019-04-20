@@ -74,7 +74,7 @@ public abstract class WebRequestBase {
                 //responseJsonData = JsonMapper.ToObject(www.error);
                 NetWorkError(www.error);
             } else {
-                Debug.Log(www.downloadHandler.text);
+                DebugMy.Log(www.downloadHandler.text,this);
                 try {
                     responseJsonData = JsonMapper.ToObject(www.downloadHandler.text);
                     if ("200" == responseJsonData["code"].ToString()) {
